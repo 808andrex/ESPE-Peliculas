@@ -4,9 +4,6 @@ import espe.movies.Contenidos.Peliculas;
 import espe.movies.Plataforma.Usuario;
 import espe.movies.Plataforma.util.ScannerUtils;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 
 public class Main {
     public static final String VERSION = "1.0.0";
@@ -15,24 +12,25 @@ public class Main {
 
         System.out.println(NOMBRE_PLATAFORMA+" v"+VERSION);
 
-        String nombre = ScannerUtils.capturarTexto("Nombre de la pelicula");
+        String titulo = ScannerUtils.capturarTexto("Nombre de la pelicula");
         String genero = ScannerUtils.capturarTexto("Genero de la pelicula");
         double calificacion = ScannerUtils.capturarDecimal("Calificaciones de contenido");
         int duracion = ScannerUtils.capturarNumero("Duracion del contenido");
 
 
-        Peliculas movie = new Peliculas(nombre,duracion,genero,calificacion);
+        Peliculas movie = new Peliculas(titulo,duracion,genero,calificacion);
         System.out.println(movie.obtenerFichaTecnica());
 
 //        long duracionLong = movie.duraciom;
-//        System.out.println("Duracion long "+duracionLong);
+//        System.out.println("Duracion long "+duracionLong);x
 //        int calificacion = (int)movie.calificacion;
 //        System.out.println("Calificacion int: "+calificacion);
 //        long numeroDePremios = Long.parseLong("14");
 
-        Usuario user = new Usuario();
-        user.nombre="Kevin Pesantes";
-        System.out.println(user.fechaRegistro);
+        String nombre = ScannerUtils.capturarTexto("Nombre de Usuario: ");
+        String correo = ScannerUtils.capturarTexto("Correo de Usuario: ");
+        Usuario user = new Usuario(nombre,correo);
+        user.ver(movie);
 
 /*      Scanner scanner = new Scanner(System.in);
         System.out.print("Cual es tu nombre?: ");
