@@ -3,13 +3,13 @@ package espe.movies.Contenidos;
 import java.time.LocalDate;
 
 public class Peliculas {
-    public  String titulo;
-    public  String descripcion;
-    public  int duraciom;
-    public  String genero;
-    public LocalDate fechaEstreno;
-    public  double calificacion;
-    public  boolean disponible;
+    private  String titulo;
+    private  String descripcion;
+    private  int duraciom;
+    private  String genero;
+    private LocalDate fechaEstreno;
+    private  double calificacion;
+    private  boolean disponible;
 
     public Peliculas(String titulo, int duraciom, String genero){
         this.titulo=titulo;
@@ -40,7 +40,53 @@ public class Peliculas {
         }
     }
 
+    /** GETTERS */
     public boolean esPopular(){
         return calificacion>=4;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public int getDuraciom() {
+        return duraciom;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public LocalDate getFechaEstreno() {
+        return fechaEstreno;
+    }
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    /** SETTERS */
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public void setFechaEstreno(LocalDate fechaEstreno) {
+        this.fechaEstreno = fechaEstreno;
+    }
+
+    public void setDuraciom(int duraciom) {
+        this.duraciom = duraciom;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
